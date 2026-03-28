@@ -19,7 +19,8 @@ const eslintConfig = defineConfig([
   ]),
   {
     rules: {
-      '@stylistic/comma-dangle': ['error', 'never']
+      '@stylistic/comma-dangle': ['error', 'never'],
+      '@stylistic/jsx-quotes': ['error', 'prefer-single']
     }
   }
 ])
