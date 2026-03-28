@@ -6,7 +6,7 @@ const NavbarLink = ({ href, children }: { href: string, children: React.ReactNod
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='hidden md:block'>
       <ul className='flex gap-8'>
         <li>
           <NavbarLink href='#'>Home</NavbarLink>
