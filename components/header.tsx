@@ -4,7 +4,7 @@ import Button from './base/button'
 const Header = () => {
   return (
     <header className='px-4'>
-      <div className='container mx-auto flex items-center justify-between h-16'>
+      <div className='container mx-auto flex items-center justify-between h-24'>
         <div className='font-serif text-2xl font-bold'>
           CRISTIAN
           {' '}
