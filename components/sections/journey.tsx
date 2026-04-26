@@ -1,4 +1,24 @@
+const jobs = [
+  {
+    id: 'hexacorp',
+    place: 'Hexacorp',
+    icon: 'hexacorp.svg',
+    from: new Date(2021, 0),
+    to: new Date(2021, 7)
+  },
+  {
+    id: 'oktana',
+    place: 'Oktana',
+    icon: 'oktana.png',
+    from: new Date(2021, 10)
+  }
+]
+
+import Image from 'next/image'
+
 const Journey = () => {
+  const formatDate = (date: Date) => date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long' })
+
   return (
     <section className='exp' id='exp'>
       <div className='wrap'>
@@ -13,47 +33,23 @@ const Journey = () => {
         </div>
         <div className='timeline'>
           <div className='tl-grid'>
-
-            <div className='tl-item'>
-              <span className='tl-year'>2020 — Inicio</span>
-              <h3 className='tl-title'>Primeras líneas</h3>
-              <p className='tl-org'>Autodidacta · HTML, CSS, JS</p>
-              <p className='tl-desc'>
-                Empecé construyendo páginas estáticas, clones de UI y experimentos en CodePen para
-                entender el navegador a fondo.
-              </p>
-            </div>
-
-            <div className='tl-item'>
-              <span className='tl-year'>2022</span>
-              <h3 className='tl-title'>Frontend serio</h3>
-              <p className='tl-org'>React · TypeScript · Tailwind</p>
-              <p className='tl-desc'>
-                Salté a SPAs reales, estado, ruteo y diseño basado en sistemas. Mis primeros
-                clientes freelance.
-              </p>
-            </div>
-
-            <div className='tl-item'>
-              <span className='tl-year'>2024</span>
-              <h3 className='tl-title'>Full-stack</h3>
-              <p className='tl-org'>Node · PostgreSQL · Next.js</p>
-              <p className='tl-desc'>
-                Bases de datos, APIs, auth y deploy. Pasé de hacer interfaces a enviar productos
-                completos.
-              </p>
-            </div>
-
-            <div className='tl-item now'>
-              <span className='tl-year'>2026 — Hoy</span>
-              <h3 className='tl-title'>Producto &amp; oficio</h3>
-              <p className='tl-org'>Freelance · Santa Cruz de la Sierra, BO</p>
-              <p className='tl-desc'>
-                Trabajo con startups y equipos pequeños construyendo interfaces que se sienten
-                cuidadas, accesibles y rápidas.
-              </p>
-            </div>
-
+            {jobs.map(job => (
+              <div key={job.id} className='tl-item'>
+                {job.icon && (
+                  <Image
+                    src={`/images/jobs/${job.icon}`}
+                    alt={job.place}
+                    width={64}
+                    height={64}
+                    className='tl-icon'
+                  />
+                )}
+                <span className='tl-year'>
+                  {formatDate(job.from)} {job.to ? `— ${formatDate(job.to)}` : '— Hoy'}
+                </span>
+                <h3 className='tl-title'>{job.place}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </div>

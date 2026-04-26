@@ -644,7 +644,7 @@ section.exp .sec-head p.lede {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 6px;
+  margin-block: 6px;
 }
 
 .tl-org {
