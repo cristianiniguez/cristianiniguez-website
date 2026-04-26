@@ -42,6 +42,7 @@ const Journey = () => {
                     width={64}
                     height={64}
                     className='tl-icon'
+                    style={{ width: '64px', height: '64px' }}
                   />
                 )}
                 <span className='tl-year'>

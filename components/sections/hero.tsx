@@ -31,6 +31,7 @@ const Hero = () => {
               src='/images/me.jpg'
               alt='Cristian Iñiguez'
               fill
+              sizes='(max-width: 980px) 50vw, 25vw'
               style={{ objectFit: 'cover' }}
               priority
             />
