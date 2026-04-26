@@ -21,7 +21,8 @@ const eslintConfig = defineConfig([
     rules: {
       '@stylistic/comma-dangle': ['error', 'never'],
       '@stylistic/jsx-one-expression-per-line': 'off',
-      '@stylistic/jsx-quotes': ['error', 'prefer-single']
+      '@stylistic/jsx-quotes': ['error', 'prefer-single'],
+      '@stylistic/max-len': ['error', { code: 144, ignoreComments: true, ignoreStrings: true, ignoreTemplateLiterals: true }]
     }
   }
 ])

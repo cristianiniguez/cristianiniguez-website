@@ -1,4 +1,59 @@
+import { IconType } from 'react-icons'
+import {
+  SiCss,
+  SiDocker,
+  SiFigma,
+  SiFirebase,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiSass,
+  SiTailwindcss,
+  SiTypescript
+} from 'react-icons/si'
+
 type SkillLevel = 1 | 2 | 3 | 4 | 5
+
+type Skill = {
+  name: string
+  icon: IconType
+  level: SkillLevel
+}
+
+const skills: { [key: string]: Skill[] } = {
+  languages: [
+    { name: 'HTML', icon: SiHtml5, level: 5 },
+    { name: 'CSS', icon: SiCss, level: 5 },
+    { name: 'JavaScript', icon: SiJavascript, level: 5 },
+    { name: 'TypeScript', icon: SiTypescript, level: 5 },
+    { name: 'Sass', icon: SiSass, level: 5 },
+    { name: 'Python', icon: SiPython, level: 3 }
+  ],
+  frameworks: [
+    { name: 'React', icon: SiReact, level: 5 },
+    { name: 'Next JS', icon: SiNextdotjs, level: 5 },
+    { name: 'Tailwind', icon: SiTailwindcss, level: 4 },
+    { name: 'Express / Node', icon: SiNodedotjs, level: 4 }
+  ],
+  databases: [
+    { name: 'PostgreSQL', icon: SiPostgresql, level: 4 },
+    { name: 'MySQL', icon: SiMysql, level: 4 },
+    { name: 'MongoDB', icon: SiMongodb, level: 3 },
+    { name: 'Firebase', icon: SiFirebase, level: 2 }
+  ],
+  others: [
+    { name: 'Git / GitHub', icon: SiGit, level: 5 },
+    { name: 'Figma', icon: SiFigma, level: 4 },
+    { name: 'Docker', icon: SiDocker, level: 3 }
+  ]
+}
 
 const Dots = ({ level }: { level: SkillLevel }) => (
   <span className='level'>
@@ -8,10 +63,10 @@ const Dots = ({ level }: { level: SkillLevel }) => (
   </span>
 )
 
-const Skill = ({ glyph, name, level }: { glyph: string, name: string, level: SkillLevel }) => (
+const Skill = ({ icon: Icon, name, level }: Skill) => (
   <div className='skill'>
     <span className='name'>
-      <span className='glyph'>{glyph}</span>
+      <Icon className='glyph' />
       {name}
     </span>
     <Dots level={level} />
@@ -19,6 +74,14 @@ const Skill = ({ glyph, name, level }: { glyph: string, name: string, level: Ski
 )
 
 const Skills = () => {
+  const renderSkillsList = (skills: Skill[]) => (
+    <div className='skill-list'>
+      {skills.map(skill => (
+        <Skill key={skill.name} icon={skill.icon} name={skill.name} level={skill.level} />
+      ))}
+    </div>
+  )
+
   return (
     <section className='skills' id='skills'>
       <div className='wrap'>
@@ -35,46 +98,22 @@ const Skills = () => {
 
           <div className='skill-cat'>
             <h4>Lenguajes</h4>
-            <div className='skill-list'>
-              <Skill glyph='JS' name='JavaScript' level={5} />
-              <Skill glyph='TS' name='TypeScript' level={4} />
-              <Skill glyph='PY' name='Python' level={3} />
-              <Skill glyph='JV' name='Java' level={3} />
-              <Skill glyph='C#' name='C#' level={2} />
-            </div>
+            {renderSkillsList(skills.languages)}
           </div>
 
           <div className='skill-cat'>
             <h4>Frameworks</h4>
-            <div className='skill-list'>
-              <Skill glyph='RC' name='React' level={5} />
-              <Skill glyph='NX' name='Next.js' level={4} />
-              <Skill glyph='VU' name='Vue' level={3} />
-              <Skill glyph='TW' name='Tailwind' level={5} />
-              <Skill glyph='EX' name='Express / Node' level={4} />
-            </div>
+            {renderSkillsList(skills.frameworks)}
           </div>
 
           <div className='skill-cat'>
             <h4>Bases de datos</h4>
-            <div className='skill-list'>
-              <Skill glyph='PG' name='PostgreSQL' level={4} />
-              <Skill glyph='MY' name='MySQL' level={3} />
-              <Skill glyph='MO' name='MongoDB' level={3} />
-              <Skill glyph='FB' name='Firebase' level={2} />
-              <Skill glyph='SU' name='Supabase' level={3} />
-            </div>
+            {renderSkillsList(skills.databases)}
           </div>
 
           <div className='skill-cat'>
             <h4>Herramientas</h4>
-            <div className='skill-list'>
-              <Skill glyph='GT' name='Git / GitHub' level={5} />
-              <Skill glyph='FG' name='Figma' level={4} />
-              <Skill glyph='DK' name='Docker' level={3} />
-              <Skill glyph='VC' name='Vercel' level={4} />
-              <Skill glyph='LX' name='Linux' level={3} />
-            </div>
+            {renderSkillsList(skills.others)}
           </div>
 
         </div>

@@ -458,11 +458,23 @@ section.skills {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 1px;
   background: var(--line);
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .skill-cat {
@@ -524,7 +536,6 @@ section.skills {
 .skill .glyph {
   width: 28px;
   height: 28px;
-  border: 1px solid var(--line);
   border-radius: 6px;
   display: grid;
   place-items: center;
@@ -1042,10 +1053,6 @@ footer.site-footer a:hover {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .tl-grid {
