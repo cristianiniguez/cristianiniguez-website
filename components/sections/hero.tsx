@@ -22,7 +22,7 @@ const Hero = () => {
           </span>
           <span className='hero-subtitle'>
             <span className='hero-subtitle-rule' />
-            diseñando &amp; construyendo la web desde Quito.
+            diseñando &amp; construyendo la web desde Santa Cruz de la Sierra.
           </span>
         </h1>
 
@@ -53,9 +53,9 @@ const Hero = () => {
           <div className='col'>
             <h6>Ubicación</h6>
             <p>
-              <strong>Quito, Ecuador</strong>
+              <strong>Santa Cruz de la Sierra, Bolivia</strong>
               <br />
-              UTC -5 · Trabajo remoto a nivel global.
+              UTC -4 · Trabajo remoto a nivel global.
             </p>
           </div>
         </div>

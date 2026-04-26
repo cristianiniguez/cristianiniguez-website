@@ -47,7 +47,7 @@ const Journey = () => {
             <div className='tl-item now'>
               <span className='tl-year'>2026 — Hoy</span>
               <h3 className='tl-title'>Producto &amp; oficio</h3>
-              <p className='tl-org'>Freelance · Quito, EC</p>
+              <p className='tl-org'>Freelance · Santa Cruz de la Sierra, BO</p>
               <p className='tl-desc'>
                 Trabajo con startups y equipos pequeños construyendo interfaces que se sienten
                 cuidadas, accesibles y rápidas.

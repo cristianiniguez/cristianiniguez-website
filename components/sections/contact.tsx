@@ -25,7 +25,7 @@ const Contact = () => {
             <div className='email'>
               hola<em>@</em>cristianiniguez.dev
             </div>
-            <div className='loc'>Quito, Ecuador · UTC −5</div>
+            <div className='loc'>Santa Cruz de la Sierra, Bolivia · UTC -4</div>
             <div className='socials'>
               <a href='https://github.com/cristianiniguez'>
                 <span>GitHub</span>

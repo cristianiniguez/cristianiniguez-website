@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Cristian Iñiguez — Desarrollador Web',
-  description: 'Desarrollador web full-stack con foco en frontend e interfaces. Quito, Ecuador.'
+  description: 'Desarrollador web full-stack con foco en frontend e interfaces. Santa Cruz de la Sierra, Bolivia.'
 }
 
 export default function RootLayout({
