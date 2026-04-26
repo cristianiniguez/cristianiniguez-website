@@ -6,11 +6,11 @@ const Navbar = () => {
       <li><a href='#exp'>Experiencia</a></li>
       <li><a href='#projects'>Proyectos</a></li>
       <li><a href='#contact' className='cta'>Contáctame →</a></li>
-      <li className='lang'>
+      {/* <li className='lang'>
         <span className='active'>ES</span>
         <span>/</span>
         <span>EN</span>
-      </li>
+      </li> */}
     </ul>
   )
 }
