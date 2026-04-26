@@ -1,4 +1,40 @@
+interface ServicesCardProps {
+  title: React.ReactNode
+  description: string
+  features: string[]
+}
+
+const ServicesCard = ({ title, description, features }: ServicesCardProps) => (
+  <div className='svc-card'>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <ul>
+      {features.map((feature: string, idx: number) => (
+        <li key={idx}>{feature}</li>
+      ))}
+    </ul>
+  </div>
+)
+
 const Services = () => {
+  const servicesData = [
+    {
+      title: <>Páginas, Sitios y <em>Aplicaciones Web</em></>,
+      description: 'Soluciones web completas que reflejan tu marca, se adaptan a todos los dispositivos y alcanzan audiencias en múltiples idiomas.',
+      features: ['Refleja tu marca', 'Muéstrate en todas partes', 'En diferentes idiomas']
+    },
+    {
+      title: <>Aplicaciones de <em>escritorio</em></>,
+      description: 'Software multiplataforma robusto que funciona en cualquier sistema operativo con bases de datos integradas y diseño intuitivo.',
+      features: ['Software multiplataforma', 'Conexión a base de datos', 'Diseño amigable']
+    },
+    {
+      title: <><em>APIs</em> development</>,
+      description: 'Backends potentes con autenticación segura, integración con bases de datos y conexión fluida con tu frontend.',
+      features: ['Autenticación', 'Conexión a base de datos', 'Integración con el Frontend']
+    }
+  ]
+
   return (
     <section className='svc'>
       <div className='wrap'>
@@ -12,61 +48,9 @@ const Services = () => {
           </p>
         </div>
         <div className='svc-grid'>
-
-          <div className='svc-card'>
-            <div className='num'>
-              <span>S/01</span>
-              <span>Desde $</span>
-            </div>
-            <span className='arrow'>→</span>
-            <h3>Sitios <em>web</em> a medida</h3>
-            <p>
-              Landing pages, portfolios y sitios institucionales con diseño propio, responsive y
-              optimizados de fábrica.
-            </p>
-            <ul>
-              <li>Diseño + desarrollo</li>
-              <li>SEO básico incluido</li>
-              <li>Deploy + dominio</li>
-            </ul>
-          </div>
-
-          <div className='svc-card'>
-            <div className='num'>
-              <span>S/02</span>
-              <span>Por proyecto</span>
-            </div>
-            <span className='arrow'>→</span>
-            <h3>Aplicaciones <em>web</em></h3>
-            <p>
-              Productos con login, paneles, base de datos y lógica real. Construidos para crecer
-              sin romperse.
-            </p>
-            <ul>
-              <li>React / Next.js</li>
-              <li>API + base de datos</li>
-              <li>Auth + roles</li>
-            </ul>
-          </div>
-
-          <div className='svc-card'>
-            <div className='num'>
-              <span>S/03</span>
-              <span>Iguala mensual</span>
-            </div>
-            <span className='arrow'>→</span>
-            <h3>Mantenimiento <em>continuo</em></h3>
-            <p>
-              Iteración semanal sobre tu producto: nuevas features, bug-fixes, performance y QA en
-              producción.
-            </p>
-            <ul>
-              <li>Soporte continuo</li>
-              <li>Mejoras incrementales</li>
-              <li>Reportes mensuales</li>
-            </ul>
-          </div>
-
+          {servicesData.map((service, idx) => (
+            <ServicesCard key={idx} {...service} />
+          ))}
         </div>
       </div>
     </section>
