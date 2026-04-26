@@ -9,38 +9,38 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: 'P/01',
-    name: <>Solucionario de <em>Matemáticas</em></>,
-    desc: 'App educativa que resuelve y explica paso a paso ejercicios de álgebra y cálculo. Hecha para estudiantes de bachillerato.',
-    tags: ['React', 'Python', 'Sympy'],
-    href: '#'
+    name: <>Tu Solucionario de <em>Matemáticas</em></>,
+    desc: 'Cursos gratis de matemáticas para estudiantes escolares y universitarios',
+    tags: ['React', 'Python'],
+    href: 'https://tu-solucionario-de-matematicas.web.app'
   },
   {
     id: 'P/02',
-    name: <>Web <em>Bookstore</em></>,
-    desc: 'Tienda online de libros con carrito, checkout, panel admin y catálogo dinámico — full-stack en Next.js.',
-    tags: ['Next.js', 'Postgres', 'Stripe'],
-    href: '#'
+    name: <>SaitoLab <em>Inventory</em></>,
+    desc: 'Sistema de gestión de inventario',
+    tags: ['Node.js', 'React', 'MongoDB'],
+    href: 'https://github.com/cristianiniguez/saitolab-inventory'
   },
   {
     id: 'P/03',
-    name: <>Plant Web <em>Catalog</em></>,
-    desc: 'Catálogo de plantas ornamentales con filtros, fichas técnicas y galería. Diseño editorial centrado en imagen.',
-    tags: ['HTML', 'CSS', 'JS'],
-    href: '#'
+    name: <>Platzi Web <em>Challenge</em></>,
+    desc: 'Retos de la Escuela de Desarrollo Web de Platzi',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    href: 'https://cristianiniguez.github.io/platziwebchallenge'
   },
   {
     id: 'P/04',
-    name: <>Calculadora <em>Fitness</em></>,
-    desc: 'Calculadora de macros, IMC y rutinas. Interfaz limpia, totalmente responsive, sin trackers.',
-    tags: ['React', 'Tailwind'],
-    href: '#'
+    name: <>SaitoLab <em>Notes</em></>,
+    desc: 'Aplicación de Notas en Markdown',
+    tags: ['React', 'Next.js', 'TypeScript'],
+    href: 'https://saitolab-notes.vercel.app'
   },
   {
     id: 'P/05',
-    name: <>Solucionario <em>Trigonometría</em></>,
-    desc: 'Versión hermana del proyecto P/01 — enfocada en identidades, ecuaciones y triángulos.',
-    tags: ['React', 'Python'],
-    href: '#'
+    name: <>Tu Solucionario de <em>Programación</em></>,
+    desc: 'Blogs de programación para todos',
+    tags: ['React', 'Firebase'],
+    href: 'https://tusolucionariodeprogramacion.web.app'
   }
 ]
 
@@ -57,7 +57,7 @@ const Projects = () => {
         </div>
         <div className='proj-list'>
           {PROJECTS.map(p => (
-            <a key={p.id} className='proj' href={p.href}>
+            <a key={p.id} className='proj' href={p.href} target='_blank'>
               <span className='pn'>{p.id}</span>
               <span className='pname'>{p.name}</span>
               <span className='pdesc'>{p.desc}</span>
