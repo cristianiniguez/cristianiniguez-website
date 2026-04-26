@@ -1,23 +1,31 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
-import clsx from 'clsx'
+import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
-  subsets: ['latin']
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic']
 })
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin']
+const interTight = Inter_Tight({
+  variable: '--font-inter-tight',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin'],
+  weight: ['400', '500']
 })
 
 export const metadata: Metadata = {
-  title: 'Cristian Iñiguez | Web Developer',
-  description: 'Web Developer with passion for technology and software'
+  title: 'Cristian Iñiguez — Desarrollador Web',
+  description: 'Desarrollador web full-stack con foco en frontend e interfaces. Quito, Ecuador.'
 }
 
 export default function RootLayout({
@@ -26,10 +34,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en' className={clsx(spaceGrotesk.variable, inter.variable, 'h-full antialiased')}>
-      <body className='min-h-full flex flex-col'>
+    <html
+      lang='es'
+      className={`${instrumentSerif.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
+    >
+      <body>
         <Header />
-        <main className='flex-1'>{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

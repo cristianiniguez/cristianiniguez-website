@@ -1,27 +1,17 @@
-import Link from 'next/link'
-
-const NavbarLink = ({ href, children }: { href: string, children: React.ReactNode }) => {
-  return <Link className='hover:text-accent' href={href}>{children}</Link>
-}
-
 const Navbar = () => {
   return (
-    <nav className='hidden md:block'>
-      <ul className='flex gap-8'>
-        <li>
-          <NavbarLink href='#'>Home</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href='#skills'>Skill</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href='#projects'>Projects</NavbarLink>
-        </li>
-        <li>
-          <NavbarLink href='#contact'>Contact</NavbarLink>
-        </li>
-      </ul>
-    </nav>
+    <ul>
+      <li><a href='#about'>Sobre mí</a></li>
+      <li><a href='#skills'>Skills</a></li>
+      <li><a href='#exp'>Experiencia</a></li>
+      <li><a href='#projects'>Proyectos</a></li>
+      <li><a href='#contact' className='cta'>Contáctame →</a></li>
+      <li className='lang'>
+        <span className='active'>ES</span>
+        <span>/</span>
+        <span>EN</span>
+      </li>
+    </ul>
   )
 }
 

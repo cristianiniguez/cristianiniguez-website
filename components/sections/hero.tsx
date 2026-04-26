@@ -1,41 +1,67 @@
 import Image from 'next/image'
-import Button from '../base/button'
 
 const Hero = () => {
   return (
-    <section className='px-4 py-8'>
-      <div className='max-w-7xl mx-auto flex flex-col md:flex-row md:items-center gap-16'>
-        <div className='flex flex-col flex-1 items-center md:items-start gap-8 text-center md:text-start'>
-          <Image
-            className='size-48 rounded-xl border-2 border-primary shadow-2xl shadow-primary/50 md:hidden'
-            src='/images/me.jpg'
-            alt='Cristian Iñiguez'
-            width={192}
-            height={192}
-          />
+    <header className='hero'>
+      <div className='hero-grid' />
+      <div className='wrap' style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
 
-          <div className='font-serif font-bold text-4xl'>
-            <h1>Cristian Iñiguez</h1>
-            <p className='text-primary'>Web Developer</p>
+        <div className='hero-eyebrow'>
+          <span>Portfolio · 2026 · v.04</span>
+          <span className='available'>
+            <i className='pulse' />
+            Disponible para proyectos
+          </span>
+        </div>
+
+        <h1 className='hero-title'>
+          <span className='line'>Cristian</span>
+          <span className='line'>
+            <em>Iñiguez</em>
+            <span className='amp'>,</span>
+          </span>
+          <span className='hero-subtitle'>
+            <span className='hero-subtitle-rule' />
+            diseñando &amp; construyendo la web desde Quito.
+          </span>
+        </h1>
+
+        <div className='hero-meta'>
+          <div className='portrait'>
+            <Image
+              src='/images/me.jpg'
+              alt='Cristian Iñiguez'
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+            <span className='corner' />
+            <span className='tag'>CI · 2026</span>
           </div>
-
-          <p className='md:text-xl'>Architecting digital experiences through precision code and intenional design. Specializing in high-performance web applications and scalable API architectures.</p>
-
-          <div className='w-full flex flex-col items-stretch md:flex-row gap-4'>
-            <Button type='primary'>VIEW PROJECTS</Button>
-            <Button type='outline'>HIRE ME</Button>
+          <div className='col'>
+            <h6>Rol</h6>
+            <p>
+              <strong>Desarrollador Web</strong>
+              <br />
+              Full-stack, con foco en frontend e interfaces.
+            </p>
+          </div>
+          <div className='col'>
+            <h6>Stack base</h6>
+            <p>JavaScript · TypeScript · React · Node · PostgreSQL · Tailwind</p>
+          </div>
+          <div className='col'>
+            <h6>Ubicación</h6>
+            <p>
+              <strong>Quito, Ecuador</strong>
+              <br />
+              UTC -5 · Trabajo remoto a nivel global.
+            </p>
           </div>
         </div>
 
-        <Image
-          className='size-96 rounded-xl border-2 border-primary shadow-2xl shadow-primary/50 hidden md:block'
-          src='/images/me.jpg'
-          alt='Cristian Iñiguez'
-          width={1024}
-          height={1024}
-        />
       </div>
-    </section>
+    </header>
   )
 }
 
