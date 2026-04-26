@@ -23,25 +23,25 @@ const Contact = () => {
           <div className='contact-card'>
             <div className='ix'>Canales directos</div>
             <div className='email'>
-              hola<em>@</em>cristianiniguez.dev
+              felizpc1<em>@</em>gmail.com
             </div>
             <div className='loc'>Santa Cruz de la Sierra, Bolivia · UTC -4</div>
             <div className='socials'>
-              <a href='https://github.com/cristianiniguez'>
-                <span>GitHub</span>
-                <span>@cristianiniguez ↗</span>
+              <a href='https://api.whatsapp.com/send?phone=+59179890908' target='_blank'>
+                <span>WhatsApp</span>
+                <span>+591 798 90908 ↗</span>
               </a>
-              <a href='https://www.linkedin.com/in/cristian-iniguez'>
+              <a href='mailto:felizpc1@gmail.com'>
+                <span>Email</span>
+                <span>felizpc1@gmail.com ↗</span>
+              </a>
+              <a href='https://www.linkedin.com/in/cristian-iniguez' target='_blank'>
                 <span>LinkedIn</span>
                 <span>/in/cristianiniguez ↗</span>
               </a>
-              <a href='#'>
-                <span>X / Twitter</span>
-                <span>@cristian_dev ↗</span>
-              </a>
-              <a href='mailto:hola@cristianiniguez.dev'>
-                <span>Email</span>
-                <span>Copiar dirección ↗</span>
+              <a href='https://github.com/cristianiniguez' target='_blank'>
+                <span>GitHub</span>
+                <span>@cristianiniguez ↗</span>
               </a>
             </div>
           </div>

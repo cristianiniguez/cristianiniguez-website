@@ -7,7 +7,6 @@ const Hero = () => {
       <div className='wrap' style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
 
         <div className='hero-eyebrow'>
-          <span>Portfolio · 2026 · v.04</span>
           <span className='available'>
             <i className='pulse' />
             Disponible para proyectos
